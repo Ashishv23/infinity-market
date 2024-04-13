@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+/* Navigation bar*/
+header {
+  border: 1px solid blue;
+  color: #535353;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3vh;
+  top: 0;
+  left: 0;
+  align-items: center;
+  padding: 18px;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.nav-bar-link.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-bar-link, .nav-bar-profile, .nav-bar-grid {
+  margin: 0 8px; 
+  color: #535353;
+  text-decoration: none;
+}
+
+.nav-bar-link.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-bar-link:hover {
+  text-decoration: underline; 
+}
+
+#profile-image {
+  background-image: url("../images/img-1.jpg");
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+#nav-bar {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-image: url("../images/background.jpg");
+}
+
+.logo{
+  text-align: center;
+  color: white;
+  margin-top: -35px;
+  font-family: Brush Script MT;
+}
+
+
+.container {
+  margin: 4% 0% 2% 0%;
+  width: 80%;
+  max-width: 100%;
+
+}
+
+.grid-container {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 30% auto 30%;
+}
+
+.grid-container .grid-item {
+  margin: 3px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 5px 10px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-inline {
+  display: flex;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  outline-color: #f37335;
+}
+
+.form-control select {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  outline-color: #f37335;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+}
+
+
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+  visibility: visible;
+  color: #2ecc71;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form-control.error small {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form button {
+  background-color: #f37335;
+  border: 2px solid #f37335;
+  border-radius: 4px;
+  color: #eee;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+
+.card {
+  padding: 2px;
+  width: 30vw;
+  height: 280px;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 30px;
+  background-color: #fff;
+}
+
+.poster-img1 {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.left-card,
+.right-card {
+  flex: 1;
+}
+
+.right-card {
+  margin: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.item-name {
+  font-family: "open sans";
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #6c7289;
+}
+
+.main-title {
+  font-family: "Fraunces";
+  font-weight: 700;
+  font-size: 20px;
+  color: #1c232b;
+  margin: 0.5em 0;
+}
+
+.summary {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #6c7289;
+}
+
+.price {
+  display: inline-flex;
+  align-items: center;
+}
+.current-price {
+  font-family: "Fraunces";
+  font-weight: 700;
+  font-size: 20px;
+  color: #3c8067;
+  margin: 0.5em 0.5em 0.5em 0;
+}
+
+.old-price {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 1rem;
+  color: #6c7289;
+  text-decoration: line-through;
+}
+
+.btn {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 1rem;
+  width: 70%;
+  color: #fff;
+  background-color: #3c8067;
+  padding: 10px;
+  border-radius: 10px;
+  border:none;
+  transition: 0.5s;
+}
+.btn:hover {
+  background-color: #1e3d32;
+}
+
+/*Cart*/
+
+
+
+table {
+  border-collapse: collapse;
+  border: none;
+}
+tr{
+  border-bottom: 1px solid;
+}
+
+th, td {
+  padding: 8px;
+  border: none;
+}
+
+
+table img{
+  height: 50px;
+  width: 50px;
+}
+
+table input{
+  width: 50px;
+}
+
+.clear{
+  clear: both;
+}
+
+.btn-danger{
+  background-color: red;
+  color: white;
+} 
+
+/* Totals section */
+.totals {
+  .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+    
+    label {
+      float: left;
+      clear: both;
+      width: 79%;
+      text-align: right;
+    }
+    
+    .totals-value {
+      float: right;
+      width: 21%;
+      text-align: right;
+    }
+  }
+  
+  .totals-item-total {
+    font-family: font-bold;
+  }
+}
+
+.checkout {
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
+
+
+.receipt_header {
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #000;
+  text-align: center;
+}
+
+.receipt_header h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.receipt_header h1 span {
+  display: block;
+  font-size: 25px;
+}
+
+.receipt_header h2 {
+  font-size: 14px;
+  color: #727070;
+  font-weight: 300;
+}
+
+.receipt_header h2 span {
+  display: block;
+}
+
+.receipt_body {
+  margin-top: 10px;
+}
