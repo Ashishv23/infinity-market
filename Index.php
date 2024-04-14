@@ -1,4 +1,5 @@
 <?php
+include 'php/functions.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,9 +18,9 @@
 		<!-- Nav bar -->
 		<div id="nav-bar">
 			<a href="" class="nav-bar-link active">Home</a>
-			<a href="order_list.html" class="nav-bar-link">Orders</a>
-			<a href="create_shop_manager.html" class="nav-bar-link">Create shop manager</a>
-			<a href="login.html" class="nav-bar-profile">
+			<a href="order_list.php" class="nav-bar-link">Orders</a>
+			<a href="create_shop_manager.php" class="nav-bar-link">Create shop manager</a>
+			<a href="login.php" class="nav-bar-profile">
 				<span class="fa fa-user"></span>
 				<!-- <div id="profile-image"></div> -->
 			</a>

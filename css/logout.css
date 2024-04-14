@@ -78,85 +78,6 @@ body {
   text-align: center;
 }
 
-.info-text {
-	font-size: 1rem;
-}
-
-.wrapper {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.login-box {
-		background: #fff;
-		width: 300px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-		/* height: 400px; */
-		box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.1);
-		text-align: center;
-		padding: 20px;
-}
-
-.form-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.form-container .input-addon {
-	margin-top: 1.5rem;
-}
-
-.form-element {
-	margin-top: 0.8rem;
-	height: 1.5rem;
-	border: 1px solid #d2d6de;
-	padding: 5px;
-	font-size: .9rem;
-}
-
-.form-element:focus {
-	outline: 1px solid #007bff;
-}
-
-.form-element::placeholder {
-	font-family: 'Raleway', sans-serif;
-	font-size: .8rem;
-}
-
-.form-element.is-submit {
-	height: 3rem;
-	font-size: 1rem;
-	line-height: normal;
-	font-family: 'Raleway', sans-serif;
-	background: #007bff;;
-	color: #fff;
-}
-
-.input-addon {
-	display: flex;
-}
-
-.input-addon > .form-element {
-	margin-top: 0;
-}
-
-.input-field {
-	flex: 1;
-}
-
-.input-addon-item {
-	padding: 5px;
-	width: 35px;
-	border: 1px solid #d2d6de;
-	border-left: 0;
-	background: #fff;
-	color: #6a6b6d;
-}
-
 .nav-bar-profile .fa-user {
     color: #ccc; /* Example color for unselected state */
   }
@@ -165,3 +86,41 @@ body {
   .nav-bar-profile.active .fa-user {
     color: #000; /* Example color for selected state */
   }
+
+.card {
+    width: 300px;
+    margin: 20px auto;
+    border: 1px solid #0d0d0d;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold; /* Make header text bold */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card-body button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-body button:hover {
+    background-color: #cc0000;
+}

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/dbconnection.php');
+include('php/db_connection.php');
 
 
 // send user to login page if they are not logged in
@@ -29,10 +29,10 @@ if (!isset($_SESSION['logged_in'])) {
       <h1 class="store-name">Infinity market</h1>
       <!-- Nav bar -->
       <div id="nav-bar">
-        <a href="Index.html" class="nav-bar-link">Home</a>
+        <a href="Index.php" class="nav-bar-link">Home</a>
         <a href="" class="nav-bar-link active" >Orders</a>
-        <a href="create_shop_manager.html" class="nav-bar-link">Create shop manager</a>
-        <a href="login.html" class="nav-bar-profile">
+        <a href="create_shop_manager.php" class="nav-bar-link">Create shop manager</a>
+        <a href="login.php" class="nav-bar-profile">
           <span class="fa fa-user"></span>  
           <!-- <div id="profile-image"></div> -->
         </a>

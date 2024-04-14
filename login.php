@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/dbconnection.php');
+include('php/db_connection.php');
 
 if (isset($_SESSION['logged_in'])) {
   header('Location:logout.php');
@@ -10,6 +10,7 @@ if (isset($_SESSION['logged_in'])) {
 if (!empty($_POST)) {
   $username = $_POST['username'];
   $password = $_POST['password'];
+  // $role = $_POST['role'];
 
   // Check if username and password are not empty
   if (empty($username) || empty($password)) {
@@ -18,9 +19,10 @@ if (!empty($_POST)) {
     $sqlQuery = "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password'";
     $sqlResult = $db->query($sqlQuery);
 
-    if ($sqlResult->num_rows == 1) {
+    if ($sqlResult->num_rows > 1) {
       // If a user with the username and password combination is found
       $_SESSION['username'] = $username;
+      // $_SESSION['role'] = $role;
       $_SESSION['logged_in'] = TRUE;
 
       // for admin username and password is admin admin
@@ -56,9 +58,9 @@ if (!empty($_POST)) {
     <h1 class="store-name">Infinity market</h1>
     <!-- Nav bar -->
     <div id="nav-bar">
-      <a href="Index.html" class="nav-bar-link">Home</a>
-      <a href="order_list.html" class="nav-bar-link">Orders</a>
-      <a href="create_shop_manager.html" class="nav-bar-link">Create shop manager</a>
+      <a href="Index.php" class="nav-bar-link">Home</a>
+      <a href="order_list.php" class="nav-bar-link">Orders</a>
+      <a href="create_shop_manager.php" class="nav-bar-link">Create shop manager</a>
       <a href="" class="nav-bar-profile active">
         <!-- <div id="profile-image"></div> -->
         <span class="fa fa-user"></span>
@@ -111,8 +113,9 @@ if (!empty($_POST)) {
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = md5($_POST['password']);
+  $role = $_POST['role'];
   //fetch data from user and see when user pass match then login else user/pass wrong
-  $select = "SELECT * FROM user_login";
+  $select = "SELECT * FROM users";
   $select_execute = mysqli_query($conn, $select);
   while ($data = mysqli_fetch_assoc($select_execute)) {
     echo '<script>';
@@ -123,6 +126,7 @@ if (isset($_POST['submit'])) {
       $id = $data['id'];
       $_SESSION['username'] = $username;
       $_SESSION['password'] = $password;
+      $_SESSION['role'] = "shop_manager";
       $_SESSION['id'] = $id;
       header("location:orders.php");
     } else {
