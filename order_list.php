@@ -1,3 +1,15 @@
+<?php
+session_start();
+include('includes/dbconnection.php');
+
+
+// send user to login page if they are not logged in
+if (!isset($_SESSION['logged_in'])) {
+  header('Location:login.php');
+  exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
