@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+/* Navigation bar*/
+header {
+  border: 1px solid blue;
+  color: #535353;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3vh;
+  top: 0;
+  left: 0;
+  align-items: center;
+  padding: 18px;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.nav-bar-link.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-bar-link, .nav-bar-profile, .nav-bar-grid {
+  margin: 0 8px; 
+  color: #535353;
+  text-decoration: none;
+}
+
+.nav-bar-link:hover {
+  text-decoration: underline; 
+}
+
+#profile-image {
+  background-image: url("../images/img-1.jpg");
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+#nav-bar {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  
+}
+
+.logo{
+  text-align: center;
+  color: white;
+  margin-top: -35px;
+  font-family: Brush Script MT;
+}
+
+.header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+   display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.login-page{
+    background: #F2F7FB;
+line-height: 1;
+padding: 0 !important;
+   display: flex;
+justify-content: center;
+align-items: center;
+}
+.login-form {
+width: 420px;
+background-color: #fff;
+padding: 40px;
+border-radius: 8px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.login-form{
+    gap: 40px;
+}
+.login-form h2{
+margin-bottom: 10px;
+}
+.login-form p{
+margin-top: 5px;
+}
+button[type="submit"] {
+width: 100%;
+padding: 12px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+background-color: #0056b3;
+}
+.forgot-psw {
+display: flex;
+align-items: center;
+justify-content: space-between;
+    margin-bottom: 20px;
+}
+.checkbox {
+display: flex;
+gap: 10px;
+align-items: center;
+}
+.checkbox label {
+font-size: 14px;
+margin-bottom: 0px;
+font-weight: 500;
+}
+.login-form a{
+font-size: 14px;
+font-weight: 500;
+line-height: 20px;
+text-decoration: none;
+color: #007bff;
+}
+.register p {
+text-align: center;
+font-size: 14px;
+margin-bottom: 0px;
+font-weight: 500;
+}
+
+.nav-bar-profile .fa-user {
+  color: #ccc; /* Example color for unselected state */
+}
+
+/* Style for selected user icon */
+.nav-bar-profile.active .fa-user {
+  color: #000; /* Example color for selected state */
+}

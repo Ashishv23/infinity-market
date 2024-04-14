@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-page">
+    <!-- Header bar-->
+	<header>
+		<!-- Store Name -->		
+		<h1 class="store-name">Infinity market</h1>
+		<!-- Nav bar -->
+		<div id="nav-bar">
+			<a href="Index.html" class="nav-bar-link">Home</a>
+			<a href="order_list.html" class="nav-bar-link">Orders</a>
+			<a href="create_shop_manager.html" class="nav-bar-link">Create shop manager</a>
+			<a href="" class="nav-bar-profile active">
+				<!-- <div id="profile-image"></div> -->
+                <span class="fa fa-user"></span>
+			</a>
+			<a href="#" class="grid-icon grid-icon--fill nav-bar-grid">
+				<span class="layer layer--primary">
+					<span></span>
+				</span>
+				<span class="layer layer--secondary">
+					<span></span>
+				</span>
+				<span class="layer layer--tertiary">
+					<span></span>
+				</span>
+			</a>
+		</div>
+	</header>
+    <div class="login-form">
+        <div class="container">
+              <h2>Login to account</h2>
+            <p>Enter your email & password to login</p>
+        <form action="login.php" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <div class="forgot-psw">
+                                <div class="checkbox">
+                                    <input class="" type="checkbox">
+                                    <label>Keep me signed in</label>
+                                </div>
+                                <a href="#">Forgot password?</a>
+                            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="register">
+                           <p> You don't have an account yet?
+                            <a href="#">Register now</a></p>
+                        </div>
+        </div>
+      
+    </div>
+</body>
+</html>

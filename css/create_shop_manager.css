@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+/* Navigation bar*/
+header {
+  border: 1px solid blue;
+  color: #535353;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3vh;
+  top: 0;
+  left: 0;
+  align-items: center;
+  padding: 18px;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.nav-bar-link.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-bar-link, .nav-bar-profile, .nav-bar-grid {
+  margin: 0 8px; 
+  color: #535353;
+  text-decoration: none;
+}
+
+.nav-bar-link:hover {
+  text-decoration: underline; 
+}
+
+#profile-image {
+  background-image: url("../images/img-1.jpg");
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+#nav-bar {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  
+}
+
+.logo{
+  text-align: center;
+  color: white;
+  margin-top: -35px;
+  font-family: Brush Script MT;
+}
+
+.header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.info-text {
+	font-size: 1rem;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-box {
+		background: #fff;
+		width: 300px;
+		height: 400px;
+		box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.1);
+		text-align: center;
+		padding: 20px;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-container .input-addon {
+	margin-top: 1.5rem;
+}
+
+.form-element {
+	margin-top: 0.8rem;
+	height: 1.5rem;
+	border: 1px solid #d2d6de;
+	padding: 5px;
+	font-size: .9rem;
+}
+
+.form-element:focus {
+	outline: 1px solid #007bff;
+}
+
+.form-element::placeholder {
+	font-family: 'Raleway', sans-serif;
+	font-size: .8rem;
+}
+
+.form-element.is-submit {
+	height: 3rem;
+	font-size: 1rem;
+	line-height: normal;
+	font-family: 'Raleway', sans-serif;
+	background: #007bff;;
+	color: #fff;
+}
+
+.input-addon {
+	display: flex;
+}
+
+.input-addon > .form-element {
+	margin-top: 0;
+}
+
+.input-field {
+	flex: 1;
+}
+
+.input-addon-item {
+	padding: 5px;
+	width: 35px;
+	border: 1px solid #d2d6de;
+	border-left: 0;
+	background: #fff;
+	color: #6a6b6d;
+}
+
+.nav-bar-profile .fa-user {
+    color: #ccc; /* Example color for unselected state */
+  }
+  
+  /* Style for selected user icon */
+  .nav-bar-profile.active .fa-user {
+    color: #000; /* Example color for selected state */
+  }

@@ -56,17 +56,6 @@ function provinceChange(selectElement) {
   }
 }
 
-function handleNavLinkClick(link) {
-  // Remove 'active' class from all navigation links
-  var navLinks = document.querySelectorAll('.nav-bar-link');
-  navLinks.forEach(function(navLink) {
-      navLink.classList.remove('active');
-  });
-
-  // Add 'active' class to the clicked link
-  link.classList.add('active');
-}
-
 function checkInputs() {
   //Get the value the form field.
   const nameValue = name.value.trim(); //trim to delete blanc space.
@@ -84,140 +73,145 @@ function checkInputs() {
   const cardCVCvalue = cardCVC.value.trim();
   if (nameValue === "") {
     isFormValid = false;
-    setErrorInput(name, "Name cannot be empty.");
+    //set error message
+    errorMessage(name, "Name cannot be empty.");
   } else {
     isFormValid = true;
     setSuccessInput(name);
   }
 
-  //###################################
   if (emailValue === "") {
     isFormValid = false;
-    setErrorInput(email, "Email cannot be empty.");
+    //set error message
+    errorMessage(email, "Email cannot be empty.");
 
   } 
   else if(!validateEmail(emailValue)){
     isFormValid = false;
-    //validateEmail(emailValue) && setSuccessInput(email);
-    setErrorInput(email, "Plese enter the email in proper format");
+    //set error message
+    errorMessage(email, "Plese enter the email in proper format");
   }
   else{
     isFormValid = true;
     setSuccessInput(email);
   }
 
-  //###################################
-  if (passwordValue === "") {
+    if (passwordValue === "") {
     isFormValid = false;
-    setErrorInput(password, "Password connot be empty.");
+    //set error message
+    errorMessage(password, "Password connot be empty.");
   } else {
     isFormValid = true;
     setSuccessInput(password) && validatePassword(passwordValue);
   }
 
-  //###################################
-  if (password2Value === "") {
+    if (password2Value === "") {
     isFormValid = false;
-    setErrorInput(password2, "Password connot be empty.");
+    //set error message
+    errorMessage(password2, "Password connot be empty.");
   } else if (password2Value !== passwordValue) {
     isFormValid = false;
-    setErrorInput(password2, "Password dosn't match.");
+    //set error message
+    errorMessage(password2, "Password dosn't match.");
   } else {
     isFormValid = true;
     setSuccessInput(password2);
   }
 
-  //###################################
-  if (phoneValue === "") {
+    if (phoneValue === "") {
     isFormValid = false;
-    setErrorInput(phone, "Phone Number cannot be empty.");
+    //set error message
+    errorMessage(phone, "Phone Number cannot be empty.");
   } else {
     isFormValid = true;
     setSuccessInput(phone);
   }
 
-  //###################################
-  if (addressValue === "") {
+    if (addressValue === "") {
     isFormValid = false;
-    setErrorInput(address, "Address cannot be empty.");
+    //set error message
+    errorMessage(address, "Address cannot be empty.");
   } else {
     isFormValid = true;
     setSuccessInput(address);
   }
 
-  //###################################
-  if (cityValue === "") {
+    if (cityValue === "") {
     isFormValid = false;
-    setErrorInput(city, "City cannot be empty.");
+    //set error message
+    errorMessage(city, "City cannot be empty.");
   } else {
     isFormValid = true;
     setSuccessInput(city);
   }
 
-  //###################################
-  if (provinceValue === "") {
+    if (provinceValue === "") {
     isFormValid = false;
-    setErrorInput(province, "Province cannot be empty.");
+    //set error message
+    errorMessage(province, "Province cannot be empty.");
   } else {
     isFormValid = true;
     setSuccessInput(province);
   }
 
-  //###################################
-  if (postCodeValue === "") {
+    if (postCodeValue === "") {
     isFormValid = false;
-    setErrorInput(postcode, "Postal Code cannot be empty.");
+    //set error message
+    errorMessage(postcode, "Postal Code cannot be empty.");
   } else {
     isFormValid = true;
     setSuccessInput(postcode);
   }
 
- //###################################
-  if (cardNameValue === "") {
+   if (cardNameValue === "") {
     isFormValid = false;
-    setErrorInput(cardName, "Name cannot be empty.");
+    //set error message
+    errorMessage(cardName, "Name cannot be empty.");
   }
   else {
     isFormValid = true;
     setSuccessInput(cardName);
   }
 
- //###################################
-  if (cardNumberValue === "") {
+   if (cardNumberValue === "") {
     isFormValid = false;
-    setErrorInput(cardNumber, "Card Number cannot be empty.");
+    //set error message
+    errorMessage(cardNumber, "Card Number cannot be empty.");
   }
   else if(!validateCardNumber(cardNumberValue)){
     isFormValid = false;
-    setErrorInput(cardNumber, "Please enter in valid format");
+    //set error message
+    errorMessage(cardNumber, "Please enter in valid format");
   }  
   else {
     isFormValid = true;
     setSuccessInput(cardNumber);
   }
 
- //###################################
-  if (cardExpValue === "") {
+   if (cardExpValue === "") {
     isFormValid = false;
-    setErrorInput(cardExp, "Expiry date cannot be empty.");
+    //set error message
+    errorMessage(cardExp, "Expiry date cannot be empty.");
   } 
   else if(!validateExpiryDate(cardExpValue)){
     isFormValid = false;
-    setErrorInput(cardExp, "Please enter in valid format");
+    //set error message
+    errorMessage(cardExp, "Please enter in valid format");
   } 
   else {
     isFormValid = true;
     setSuccessInput(cardExp);
   }
 
- //###################################
-  if (cardCVCvalue === "") {
+   if (cardCVCvalue === "") {
     isFormValid = false;
-    setErrorInput(cardCVC, "CVC cannot be empty.");
+    //set error message
+    errorMessage(cardCVC, "CVC cannot be empty.");
   } 
   else if(!validateCVC(cardCVCvalue)){
     isFormValid = false;
-    setErrorInput(cardCVC, "Please enter in valid format");
+    //set error message
+    errorMessage(cardCVC, "Please enter in valid format");
   } 
   else {
     isFormValid = true;
@@ -226,7 +220,8 @@ function checkInputs() {
 
 }
 
-function setErrorInput(input, errorMessage) {
+//Set the error message
+function errorMessage(input, errorMessage) {
   const formControl = input.parentElement;
   const small = formControl.querySelector("small");
   small.innerText = errorMessage;
@@ -238,42 +233,31 @@ function setSuccessInput(input) {
   formControl.className = "form__control success";
 }
 
-
+//Validate email address
 function validateEmail(email) {
   let regular_expressions = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return regular_expressions.test(String(email).toLocaleLowerCase());
 }
 
+//Validate card number format(xxxx-xxxx-xxxx-xxxx-xxxx-xxxx)
 function validateCardNumber(cardNumber) {
-  // Regular expression for validating card numbers in the format xxxx-xxxx-xxxx-xxxx
   var regex = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
   return regex.test(cardNumber);
 }
 
+//validate expiry date format(MMM/YYYY)
 function validateExpiryDate(expiryDate) {
-  // Regular expression for validating date in "MMM/yyyy" format
   var regex = /^(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\/\d{4}$/;
   return regex.test(expiryDate);
 }
 
+//validate CVC
 function validateCVC(cvc) {
-  // Regular expression for validating a 3-digit CVC
   var regex = /^\d{3}$/;
   return regex.test(cvc);
 }
-/* Set rates + misc */
-//var taxRate = 0.05;
+
 var fadeTime = 300;
-
-
-
-// var item1 = document.getElementById('item1');
-
-// // Add event listener for click event
-// item1.addEventListener('click', function() {
-//   var imageElement = document.getElementById("myImage");
-//   shoppingCarts.style.display = 'block';
-// });
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -287,7 +271,7 @@ function addProduct(imageUrl, title, price, btnId) {
 
   var button = document.getElementById(btnId);
 
-  // Disable the button
+  // Disable button
   button.disabled = true;
 
   // Get a reference to the table

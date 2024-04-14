@@ -28,11 +28,6 @@ header {
   text-decoration: none;
 }
 
-.nav-bar-link.active {
-  font-weight: bold;
-  color: #000;
-}
-
 .nav-bar-link:hover {
   text-decoration: underline; 
 }
@@ -66,7 +61,7 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background-image: url("../images/background.jpg");
+  
 }
 
 .logo{
@@ -118,18 +113,18 @@ body {
   display: flex;
 }
 
-.form-control {
+.form__control {
   margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
 }
 
-.form-control label {
+.form__control label {
   display: inline-block;
   margin-bottom: 5px;
 }
 
-.form-control input {
+.form__control input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -140,7 +135,7 @@ body {
   outline-color: #f37335;
 }
 
-.form-control select {
+.form__control select {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   font-family: inherit;
@@ -150,40 +145,39 @@ body {
   outline-color: #f37335;
 }
 
-.form-control.success input {
+.form__control.success input {
   border-color: #2ecc71;
 }
 
-.form-control.error input {
+.form__control.error input {
   border-color: #e74c3c;
 }
 
-
-.form-control i {
+.form__control i {
   visibility: hidden;
   position: absolute;
   top: 40px;
   right: 10px;
 }
 
-.form-control.success i.fa-check-circle {
+.form__control.success i.fa-check-circle {
   visibility: visible;
   color: #2ecc71;
 }
 
-.form-control.error i.fa-exclamation-circle {
+.form__control.error i.fa-exclamation-circle {
   visibility: visible;
   color: #e74c3c;
 }
 
-.form-control small {
+.form__control small {
   visibility: hidden;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-.form-control.error small {
+.form__control.error small {
   color: #e74c3c;
   visibility: visible;
 }
@@ -293,14 +287,11 @@ body {
   background-color: #1e3d32;
 }
 
-/*Cart*/
-
-
-
 table {
   border-collapse: collapse;
   border: none;
 }
+
 tr{
   border-bottom: 1px solid;
 }
@@ -371,7 +362,6 @@ table input{
   background-color: #494;
 }
 
-
 .receipt_header {
   padding-bottom: 10px;
   border-bottom: 1px dashed #000;
@@ -401,4 +391,13 @@ table input{
 
 .receipt_body {
   margin-top: 10px;
+}
+
+.nav-bar-profile .fa-user {
+  color: #ccc; /* Example color for unselected state */
+}
+
+/* Style for selected user icon */
+.nav-bar-profile.active .fa-user {
+  color: #000; /* Example color for selected state */
 }
